@@ -6,7 +6,7 @@ const FlightResults = ({ flights }) => {
   return (
     <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
       {flights.map((flight, index) => (
-        <div key={index} className="p-4 border rounded shadow-md">
+        <div key={index} className="p-4 border rounded shadow-md result">
           <p className="font-bold">{flight.airline}</p>
           <p>
             {flight.departureTime} → {flight.arrivalTime}

@@ -105,3 +105,8 @@ ul.absolute {
 .price {
   float: right;
 }
+
+.result:hover {
+  background-color: #131bb4;
+  cursor: pointer;
+}

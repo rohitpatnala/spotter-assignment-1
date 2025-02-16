@@ -25,7 +25,6 @@ const App = () => {
       const departureTime = new Date(firstLeg.departure).toLocaleString(
         "en-US",
         {
-          // weekday: "short",
           month: "short",
           day: "numeric",
           hour: "2-digit",
@@ -35,7 +34,6 @@ const App = () => {
       );
 
       const arrivalTime = new Date(firstLeg.arrival).toLocaleString("en-US", {
-        // weekday: "short",
         month: "short",
         day: "numeric",
         hour: "2-digit",
@@ -68,6 +66,7 @@ const App = () => {
     setError("");
 
     try {
+      // The searchFlights API returns an empty object (API issue)
       const results = await searchFlights({
         originSkyId: from,
         destinationSkyId: to,
@@ -77,6 +76,7 @@ const App = () => {
         passengers,
       });
 
+      // So, we are simulating the response using a sample response (dummy data from Rapid API site)
       const expected_results = dummyData;
 
       const flights = extractFlights(expected_results);
